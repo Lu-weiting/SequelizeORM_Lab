@@ -4,17 +4,17 @@ const User = require('./Database/Entities/users')
 const app = express();
 const PORT = process.env.PORT || 3000;
 const service = require('./Infrastructure/Service/userService');
-async function test() {
-    const jane = await User.create({ name: "Jane" });
-    console.log(jane.toJSON());
-    console.log(JSON.stringify(jane, null, 4));
-    const select = await User.findOne({
-        where: {
-            name: "Jane"
-        }
-    });
-    console.log("select",select.name); 
-}
+// async function test() {
+//     const jane = await User.create({ name: "Jane" });
+//     console.log(jane.toJSON());
+//     console.log(JSON.stringify(jane, null, 4));
+//     const select = await User.findOne({
+//         where: {
+//             name: "Jane"
+//         }
+//     });
+//     console.log("select",select.name); 
+// }
 
 models.initDb().then(() => {
   app.listen(PORT, () => {
